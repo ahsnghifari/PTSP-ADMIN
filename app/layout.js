@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import { createContext, useContext, useEffect, useState } from "react";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -17,24 +16,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Deteksi tema gelap dari browser
-      const prefersDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setIsDarkMode(prefersDarkMode);
-    }
-  }, []);
-
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${
-          isDarkMode ? "dark" : "light"
-        }`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
