@@ -51,16 +51,16 @@ function Sidebar({ pengarah }) {
   const { jumlahData, sedangMemuatBanyakData } = useTampilkanBanyakData();
   const { keluar } = useKeluarAkun();
 
-  const totalData = Object.values(jumlahData).reduce(
-    (total, jumlah) => total + jumlah,
-    0
-  );
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       setLokasiSaatIni(window.location.pathname);
     }
   }, []);
+
+  const totalData = Object.values(jumlahData).reduce(
+    (total, jumlah) => total + jumlah,
+    0
+  );
 
   return (
     <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">

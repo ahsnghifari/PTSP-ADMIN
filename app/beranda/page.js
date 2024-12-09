@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,6 +11,11 @@ import Konten from "@/app/beranda/components/konten";
 const Beranda = () => {
   const pengarah = useRouter();
   const [tahunDipilih, setTahunDipilih] = useState("Pilih Tahun");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+    }
+  }, []);
 
   return (
     <section className="p-4 flex h-screen bg-[#eff0f3]">
