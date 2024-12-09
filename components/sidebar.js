@@ -49,13 +49,14 @@ function Sidebar({ pengarah }) {
   const { adminData, memuatTampilkanAdminSesuaiID } =
     useTampilkanAdminSesuaiID();
   const { jumlahData, sedangMemuatBanyakData } = useTampilkanBanyakData();
-  const { keluar } = useKeluarAkun();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setLokasiSaatIni(window.location.pathname);
     }
   }, []);
+
+  const { keluar } = useKeluarAkun();
 
   const totalData = Object.values(jumlahData).reduce(
     (total, jumlah) => total + jumlah,
