@@ -74,9 +74,9 @@ function Sidebar({ pengarah }) {
 
       <List>
         <ListItem
-          onClick={() => pengarah.push("/beranda")}
+          onClick={() => pengarah.push("/Beranda")}
           className={
-            lokasiSaatIni === "/beranda" ? "bg-[#0F67B1] text-white" : ""
+            lokasiSaatIni === "/Beranda" ? "bg-[#0F67B1] text-white" : ""
           }
         >
           <ListItemPrefix>
