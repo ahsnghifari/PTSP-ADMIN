@@ -1,12 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // KOMPONEN KAMI
-import Sidebar from "@/components/sidebar";
-import Napbar from "@/components/navbar";
-import Konten from "@/app/beranda/components/konten";
+const Sidebar = dynamic(() => import("@/components/sidebar"), { ssr: false });
+const Napbar = dynamic(() => import("@/components/navbar"), { ssr: false });
+const Konten = dynamic(() => import("@/app/Beranda/components/konten"), {
+  ssr: false,
+});
 
 const Beranda = () => {
   const pengarah = useRouter();
